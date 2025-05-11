@@ -2,7 +2,7 @@ import React from 'react';
 
 const TheFooter = () => {
     return (
-        <footer className='container'>
+        <footer>
             Created by &copy;Rishat 
         </footer>
     );
