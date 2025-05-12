@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Продукты",
+  title: "Магазин продуктов",
   description: "Тестовое задание для 'Экосистема Альфа'",
 };
 
