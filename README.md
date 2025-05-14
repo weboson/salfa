@@ -1,8 +1,8 @@
+# Интерент магазин на Next.js:
 
-# уволился из allo.ru - возобновляю выполение тестового задания на Next.js
-
-## Видео - помощник "NextJS 13. Быстрый старт" канала "Михаил Непомнящий": https://www.youtube.com/watch?v=VGiphTEApfo&t=169s&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9 
-
+## screenshots:
+1) /products: 
+![Image](https://github.com/user-attachments/assets/4a5163eb-3554-46b8-8f56-1838bbbf0b95)
 
 
 
@@ -45,9 +45,12 @@
 • возможность редактирования карточки продукта
 • дополнительную фильтрацию
 • поиск (без кнопки отправки)
+
 ----------------------------------------------------------------------------------------------------------
 
+Видео - помощник "NextJS 13. Быстрый старт" канала "Михаил Непомнящий": https://www.youtube.com/watch?v=VGiphTEApfo&t=169s&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9 
 
+----------------------------------------------------------------------------------------------------------
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
