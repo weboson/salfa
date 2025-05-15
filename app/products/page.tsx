@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CardProduct from "./components/CardProduct"; // client component
+import FilterForm from "./components/FilterForm";
 
 async function getData() {
   const response = await fetch("https://fakestoreapi.in/api/products");
@@ -17,6 +18,9 @@ export default async function Products() {
     <>
       <div className="wrapper_list">
         <h1>Список продуктов:</h1>
+        <div className="wrapper_filter">
+          <FilterForm />
+        </div>
         <ul>
           {products.map((item: any) => (
             <li key={item.id}>

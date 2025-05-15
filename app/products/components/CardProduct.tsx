@@ -7,7 +7,6 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { LuTrash2 } from "react-icons/lu";
 import { CgDetailsMore } from "react-icons/cg";
 // redux ToolKit
-import { useRef } from "react";
 import {
   useAppSelector,
   useAppDispatch,

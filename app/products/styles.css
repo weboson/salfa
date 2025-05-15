@@ -78,7 +78,6 @@ h4 {
 }
 
 /* buttons */
-
 button {
   padding: 0;
   margin: 2px;
@@ -103,15 +102,8 @@ button {
   cursor: pointer;
 }
 
-/* Media Queries */
-
-/* @media (max-width: 768px) {
-  .card .image-wrapper {
-    height: 55%;
-  }
-  .card .content-wrapper .actions .button {
-    width: 100%;
-    float: none;
-    margin: 0 0 2% 0;
-  }
-} */
+/* Filter */
+.wrapper_filter {
+  text-align: center;
+  margin-top: 10px;
+}

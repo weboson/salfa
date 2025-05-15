@@ -5,6 +5,8 @@ import TheHeader from "@/components/TheHeader";
 import TheFooter from "@/components/TheFooter";
 // redux
 import StoreProvider from "./StoreProvider";
+// Material UI
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 // Гугл шрифты вызываются, как функции с аргументами, как настройки
 const geistSans = Geist({
@@ -30,11 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <StoreProvider>
-          <TheHeader />
-          <main className="container">{children}</main>
-          <TheFooter />
-        </StoreProvider>
+        <AppRouterCacheProvider>
+          <StoreProvider>
+            <TheHeader />
+            <main className="container">{children}</main>
+            <TheFooter />
+          </StoreProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
