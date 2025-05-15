@@ -1,11 +1,13 @@
 'use client'
 import { configureStore } from '@reduxjs/toolkit'
 import favoritesReducer from './features/favorites/favoritesSlice'
+import filterReducer from './features/filter/filterSlice'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
         favoritesReducer: favoritesReducer,
+        filterReducer: filterReducer,
     },
   })
 }

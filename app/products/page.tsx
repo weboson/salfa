@@ -13,7 +13,16 @@ export const metadata: Metadata = {
 };
 
 export default async function Products() {
+
   const { products } = await getData();
+
+  // if(filter) {
+
+  //   const favoriteProducts = products.filter((item) => (
+  //     arrFavoriteId.includes(item.id)
+  //   ))
+  // }
+
   return (
     <>
       <div className="wrapper_list">
