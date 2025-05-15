@@ -1,23 +1,42 @@
 "use client";
 // client component: карточка товара
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles.css";
 import Link from "next/link";
 import { MdFavoriteBorder } from "react-icons/md";
 import { LuTrash2 } from "react-icons/lu";
 import { CgDetailsMore } from "react-icons/cg";
+// redux ToolKit
+import { useRef } from "react";
+import {
+  useAppSelector,
+  useAppDispatch,
+} from "../../../lib/hooks";
+import {
+  addFavorite,
+  removeFavorite,
+} from "../../../lib/features/favorites/favoritesSlice";
 
 const CardProduct = ({ product }: any) => {
-  const isFavorite = true;
+  // получить состояние данных
+  const arrFavorites = useAppSelector((state) => state.favoritesReducer);
+  // изменить состояние данных
+  const dispatch = useAppDispatch();
+  const [isFavorite, setFavorite] = useState(false);
 
-  const handleFavoriteClick = () => {
-    if (isFavorite) {
-      // if (product.isFavorite) {
-      // dispatch(removeFavorite(product));
-      return true;
-    } else {
-      // dispatch(addFavorite(product));
-      return false;
+  useEffect(() => {
+    console.log(arrFavorites);
+  }, [arrFavorites]);
+
+  const handleFavoriteClick = (id: number) => {
+    if (!isFavorite) {
+      setFavorite(true);
+      // console.log("true");
+      dispatch(addFavorite(id));
+    } else if (isFavorite) {
+      setFavorite(false);
+      // console.log("false");
+      dispatch(removeFavorite(id));
     }
   };
 
@@ -40,13 +59,11 @@ const CardProduct = ({ product }: any) => {
           <div className="action_button">
             <button
               style={
-                isFavorite
-                  ? { color: "rgb(255, 0, 68)" }
-                  : { color: "inherit" }
+                isFavorite ? { color: "rgb(255, 0, 68)" } : { color: "inherit" }
               }
               type="button"
               aria-label="Добавить в избранное"
-              onClick={handleFavoriteClick}
+              onClick={() => handleFavoriteClick(product.id)}
             >
               <MdFavoriteBorder className="card_icon" />
             </button>

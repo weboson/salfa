@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TheHeader from "@/components/TheHeader";
 import TheFooter from "@/components/TheFooter";
+// redux
+import StoreProvider from "./StoreProvider";
 
 // Гугл шрифты вызываются, как функции с аргументами, как настройки
 const geistSans = Geist({
@@ -28,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <TheHeader />
-        <main className="container">{children}</main>
-        <TheFooter />
+        <StoreProvider>
+          <TheHeader />
+          <main className="container">{children}</main>
+          <TheFooter />
+        </StoreProvider>
       </body>
     </html>
   );
