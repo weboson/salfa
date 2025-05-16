@@ -2,11 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* генерация статистического сайта (для деплоя в GitHub Pages) */
-  output: 'export',
-  images: {
-    // не оптимизировать изображения
-    unoptimized: true
-  },
+  // output: 'export',
+  // images: {
+  //   // не оптимизировать изображения
+  //   unoptimized: true
+  // },
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   // trailingSlash: true,

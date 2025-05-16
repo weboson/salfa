@@ -1,11 +1,10 @@
 import { Metadata } from "next";
 import CardProduct from "./components/CardProduct"; // client component
 import FilterForm from "./components/FilterForm";
+// fetch
+import { getData } from "./service/getData";
 
-async function getData() {
-  const response = await fetch("https://fakestoreapi.in/api/products");
-  return response.json();
-}
+
 
 export const metadata: Metadata = {
   title: "Продукты",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Products() {
 
-  const { products } = await getData();
+  const { products } = await getData.getAllProducts();
 
   // if(filter) {
 
