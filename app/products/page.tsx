@@ -31,7 +31,7 @@ export default async function Products() {
           <FilterForm />
         </div>
         <ul>
-          {products.map((item: any) => (
+          {products.map((item) => (
             <li key={item.id}>
               <CardProduct product={item} />
             </li>

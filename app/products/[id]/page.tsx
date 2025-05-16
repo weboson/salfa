@@ -1,12 +1,21 @@
 import { Metadata } from "next";
+import Image from "next/image";
 // fetch
 import { getData } from "../service/getData";
+import { IProduct } from "@/app/types/types";
 
+// type Props = {
+//   params: {
+//     id: string;
+//   };
+// };
+
+// НОВЫЙ КОД
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
-};
+  }>;
+};  
 
 // для генерации статического экспорта
 export async function generateStaticParams() {
@@ -15,7 +24,7 @@ export async function generateStaticParams() {
 
  
   // нужно присвоить [id] == product.id
-  return products.map((product) => ({
+  return products.map((product: IProduct) => ({
     id: '' + product.id, // string
   }))
 }
@@ -30,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Product({ params }: Props) {
+export default async function Product({ params }: {params: Promise<{ id: string }>}) {
   // asynchronous access of `params.id`.
   const { id } = await params;
 
@@ -48,7 +57,8 @@ export default async function Product({ params }: Props) {
           {product.model}
         </div>
         <div className="image_product">
-          <img style={{width: "400px"}}src={product.image} alt="" />
+          {/* <img style={{width: "400px"}}src={product.image} alt="" /> */}
+          <Image src={product.image} alt={product.title} className="image" width={400}/>
         </div>
         <div className="description_product">
           <h3>Описание</h3>

@@ -3,20 +3,23 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 import Link from "next/link";
+import Image from "next/image";
 import { MdFavoriteBorder } from "react-icons/md";
 import { LuTrash2 } from "react-icons/lu";
 import { CgDetailsMore } from "react-icons/cg";
 // redux ToolKit
-import {
-  useAppSelector,
-  useAppDispatch,
-} from "../../../lib/hooks";
+import { useAppSelector, useAppDispatch } from "../../../lib/hooks";
 import {
   addFavorite,
   removeFavorite,
 } from "../../../lib/features/favorites/favoritesSlice";
+import { IProduct } from "@/app/types/types";
 
-const CardProduct = ({ product }: any) => {
+type Iprops = {
+  product: IProduct;
+};
+
+const CardProduct = ({ product }: Iprops) => {
   // получить состояние данных
   const arrFavorites = useAppSelector((state) => state.favoritesReducer);
   // изменить состояние данных
@@ -27,7 +30,7 @@ const CardProduct = ({ product }: any) => {
     console.log(arrFavorites);
   }, [arrFavorites]);
 
-  const handleFavoriteClick = (id: number) => {
+  const handleFavoriteClick = (id: string) => {
     if (!isFavorite) {
       setFavorite(true);
       // console.log("true");
@@ -45,7 +48,8 @@ const CardProduct = ({ product }: any) => {
         <div className="card">
           <Link href={`/products/${product.id}`}>
             <div className="image-wrapper">
-              <img src={product.image} alt="" className="image" />
+              {/* <img src={product.image} alt="" className="image" /> */}
+              <Image src={product.image} alt={product.title} className="image"/>
             </div>
             <div className="card_title">
               <h4>{product.title}</h4>
