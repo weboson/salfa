@@ -1,3 +1,4 @@
+// Список продуктов
 import { Metadata } from "next";
 import CardProduct from "./components/CardProduct"; // client component
 import FilterForm from "./components/FilterForm";

@@ -8,6 +8,18 @@ type Props = {
   };
 };
 
+// для генерации статического экспорта
+export async function generateStaticParams() {
+  // получить ВСЕ продукты (объекты)
+  const { products } = await getData.getAllProducts(); 
+
+ 
+  // нужно присвоить [id] == product.id
+  return products.map((product) => ({
+    id: '' + product.id, // string
+  }))
+}
+
 // dinamic Metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;

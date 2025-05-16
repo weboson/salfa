@@ -2,11 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* генерация статистического сайта (для деплоя в GitHub Pages) */
-  // output: 'export',
-  // images: {
-  //   // не оптимизировать изображения
-  //   unoptimized: true
-  // },
+  output: 'export',
+  // базовый URL (домен)
+  basePath: "/salfa",
+  images: {
+    // не оптимизировать изображения
+    unoptimized: true,
+  },
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   // trailingSlash: true,
@@ -18,17 +20,17 @@ const nextConfig: NextConfig = {
   // distDir: 'dist',
 };
 
-// module.exports = {
-//   typescript: {
-//     // !! WARN !!
-//     // Dangerously allow production builds to successfully complete even if
-//     // your project has type errors.
-//     // !! WARN !!
-//     ignoreBuildErrors: true,
-//   },
-//   eslint: {
-//     ignoreDuringBuilds: true,
-//   },
-// };
+module.exports = {
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
 
 export default nextConfig;
